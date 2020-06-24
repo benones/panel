@@ -11,4 +11,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 
+/* input color class */
+input.mat-input-element {
+  color: #ffffff;
+}
 
+/* Change label color on focused */
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #ffffff !important;
+}
+
+/* underline border color on focused */
+.mat-focused .mat-form-field-underline .mat-form-field-ripple{
+  background-color: #ffffff !important;
+}
+
+/* placeholder color on focused */
+.mat-input-element::placeholder{
+  color:#696666;
+}
