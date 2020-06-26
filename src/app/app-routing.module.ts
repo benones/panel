@@ -1,5 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { LoginComponent } from './pages/login/login.component';
 import { UserboardsComponent } from './pages/userboards/userboards.component';
