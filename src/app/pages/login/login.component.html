@@ -2,16 +2,17 @@
   <section class="form-container">
     <div class="overlay"></div>
     <div class="user-pass">
-      <form class="login">
+      <form [formGroup]="loginForm" class="login" (ngSubmit)="onSubmit(loginForm.value)">
         <mat-form-field>
           <mat-label>Usuário</mat-label>
-          <input autocomplete="off" type="text" id="username" name="username" matInput placeholder="Ex: nome.sobrenome" required>
+          <input autocomplete="off" (keyup)="removeAlert()" type="text" id="username" name="username" [formControl]="username" required matInput placeholder="Ex: nome.sobrenome">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Senha</mat-label>
-          <input type="password" id="pass" name="password" matInput required>
+          <input type="password" (keyup)="removeAlert()" id="password" name="password" [formControl]="password" required matInput>
         </mat-form-field>
-        <button class="button" type="primary">Entrar</button>
+        <button  type="submit" class="button">Entrar</button>
+        <p *ngIf="requiredValues" class="alert-message">Preencha os campos</p>
         <p class="forgotpassp">
          <a class="forgotpass" rel="stylesheet" href="mailto:webmaster@example.com">Esqueci minha senha</a>
         </p>
